@@ -1,0 +1,419 @@
+#include<iostream>
+#include<stdlib.h>
+#include<time.h>
+
+using namespace std;
+
+char espacios[10] = { 'o','1','2','3','4','5','6','7','8','9' };
+
+int main() {
+
+    //DIBUJAMOS EL TRES EN RAYA
+    cout << "\n\n TRES EN RAYA \n\n";
+
+    cout << "Jugador 1 (X)  -  Jugador 2 (O)" << endl << endl;
+    cout << endl;
+
+    cout << "     |     |     " << endl;
+    cout << "  " << espacios[1] << "  |  " << espacios[2] << "  |  " << espacios[3] << endl;
+
+    cout << "_____|_____|____" << endl;
+    cout << "     |     |     " << endl;
+
+    cout << "  " << espacios[4] << "  |  " << espacios[5] << "  |  " << espacios[6] << endl;
+
+    cout << "_____|_____|____" << endl;
+    cout << "     |     |     " << endl;
+
+    cout << "  " << espacios[7] << "  |  " << espacios[8] << "  |  " << espacios[9] << endl;
+
+    cout << "     |     |     " << endl << endl;
+
+
+
+    int elige;
+    char simbolo;
+    simbolo = 'x';
+    int i;
+    i = 1;
+
+    //Para la PC
+    int num_aleatorio;
+    char simbolo2 = 'o';
+    int y;
+    y = 0;
+
+    while (i == 1) {
+
+        cout << "Jugador 1 elige un número: ";
+        cin >> elige;
+
+        if (elige == 1 && espacios[1] == '1')
+
+            espacios[1] = simbolo;
+        else if (elige == 2 && espacios[2] == '2')
+
+            espacios[2] = simbolo;
+        else if (elige == 3 && espacios[3] == '3')
+
+            espacios[3] = simbolo;
+        else if (elige == 4 && espacios[4] == '4')
+
+            espacios[4] = simbolo;
+        else if (elige == 5 && espacios[5] == '5')
+
+            espacios[5] = simbolo;
+        else if (elige == 6 && espacios[6] == '6')
+
+            espacios[6] = simbolo;
+        else if (elige == 7 && espacios[7] == '7')
+
+            espacios[7] = simbolo;
+        else if (elige == 8 && espacios[8] == '8')
+
+            espacios[8] = simbolo;
+        else if (elige == 9 && espacios[9] == '9')
+
+            espacios[9] = simbolo;
+        else //si el espacio ya esta ocupado imprime el mensaje
+        {
+            cout << "espacio no encontrado ";
+        }
+
+        cout << endl;
+
+        cout << "     |     |     " << endl;
+        cout << "  " << espacios[1] << "  |  " << espacios[2] << "  |  " << espacios[3] << endl;
+
+        cout << "_____|_____|____" << endl;
+        cout << "     |     |     " << endl;
+
+        cout << "  " << espacios[4] << "  |  " << espacios[5] << "  |  " << espacios[6] << endl;
+
+        cout << "_____|_____|____" << endl;
+        cout << "     |     |     " << endl;
+
+        cout << "  " << espacios[7] << "  |  " << espacios[8] << "  |  " << espacios[9] << endl;
+
+        cout << "     |     |     " << endl << endl;
+
+
+
+        //ESTRATEGIA DE LA COMPUTADORA
+
+
+        srand(time(NULL));//genera un número aleatorio
+        num_aleatorio = 1 + rand() % (9);
+
+        cout << "La computadora eligió:  " << num_aleatorio << endl;
+
+
+        int a;
+        a = 1;
+        //elige = num_aleatorio;
+        while (a == 1)
+        {
+            elige = num_aleatorio;
+            if (elige == 1 && espacios[1] == '1') {
+                espacios[1] = simbolo2;
+                break;
+            }
+            else if (elige == 2 && espacios[2] == '2') {
+                espacios[2] = simbolo2;
+                break;
+            }
+            else if (elige == 3 && espacios[3] == '3') {
+                espacios[3] = simbolo2;
+                break;
+            }
+            else if (elige == 4 && espacios[4] == '4') {
+                espacios[4] = simbolo2;
+                break;
+
+            }
+            else if (elige == 5 && espacios[5] == '5') {
+                espacios[5] = simbolo2;
+                break;
+
+            }
+            else if (elige == 6 && espacios[6] == '6') {
+                espacios[6] = simbolo2;
+                break;
+
+            }
+            else if (elige == 7 && espacios[7] == '7') {
+                espacios[7] = simbolo2;
+                break;
+            }
+            else if (elige == 8 && espacios[8] == '8') {
+                espacios[8] = simbolo2;
+                break;
+            }
+            else if (elige == 9 && espacios[9] == '9') {
+                espacios[9] = simbolo2;
+                break;
+            }
+            while (a == 1)         //COMPRUEBA ESPACIOS OCUPADOS
+            {
+            if (elige == 1 && espacios[1] == 'x')
+            {
+                //si el espacio ya esta ocupado imprime el mensaje
+                cout << "\n Espacio ya usado ";
+                num_aleatorio = 1 + rand() % (9);
+                cout << "\n La computadora eligio:  " << num_aleatorio << endl;
+                break;
+            }
+            else if (elige == 2 && espacios[2] == 'x')
+            {
+                //si el espacio ya esta ocupado imprime el mensaje
+                cout << "\n Espacio ya usado ";
+                num_aleatorio = 1 + rand() % (9);
+                cout << "\n La computadora eligio:  " << num_aleatorio << endl;
+                break;
+            }
+            else if (elige == 3 && espacios[3] == 'x')
+            {
+                //si el espacio ya esta ocupado imprime el mensaje
+                cout << "\n Espacio ya usado ";
+                num_aleatorio = 1 + rand() % (9);
+                cout << "\n La computadora eligio:  " << num_aleatorio << endl;
+                break;
+            }
+            else if (elige == 4 && espacios[4] == 'x')
+            {
+                //si el espacio ya esta ocupado imprime el mensaje
+                cout << "\n Espacio ya usado ";
+                num_aleatorio = 1 + rand() % (9);
+                cout << "\n La computadora eligio:  " << num_aleatorio << endl;
+                break;
+            }
+            else if (elige == 5 && espacios[5] == 'x')
+            {
+                //si el espacio ya esta ocupado imprime el mensaje
+                cout << "\n Espacio ya usado ";
+                num_aleatorio = 1 + rand() % (9);
+                cout << "\n La computadora eligio:  " << num_aleatorio << endl;
+                break;
+            }
+            else if (elige == 6 && espacios[6] == 'x')
+            {
+                //si el espacio ya esta ocupado imprime el mensaje
+                cout << "\n Espacio ya usado ";
+                num_aleatorio = 1 + rand() % (9);
+                cout << "\n La computadora eligio:  " << num_aleatorio << endl;
+                break;
+            }
+            else if (elige == 7 && espacios[7] == 'x')
+            {
+                //si el espacio ya esta ocupado imprime el mensaje
+                cout <<"\n Espacio ya usado ";
+                num_aleatorio = 1 + rand() % (9);
+                cout << "\n La computadora eligio:  " << num_aleatorio << endl;
+                break;
+            }
+            else if (elige == 8 && espacios[8] == 'x')
+            {
+                //si el espacio ya esta ocupado imprime el mensaje
+                cout << "\n Espacio ya usado ";
+                num_aleatorio = 1 + rand() % (9);
+                cout << "\n La computadora eligio:  " << num_aleatorio << endl;
+                break;
+            }
+            else if (elige == 9 && espacios[9] == 'x')
+            {
+                //si el espacio ya esta ocupado imprime el mensaje
+                cout << "\n Espacio ya usado ";
+                num_aleatorio = 1 + rand() % (9);
+                cout << "\n La computadora eligio:  " << num_aleatorio << endl;
+                break;
+            }
+            else if (elige == 1 && espacios[1] == 'o')
+            {
+                //si el espacio ya esta ocupado imprime el mensaje
+                cout << "\n Espacio ya usado ";
+                num_aleatorio = 1 + rand() % (9);
+                cout << "\n La computadora eligio:  " << num_aleatorio << endl;
+                break;
+            }
+            else if (elige == 2 && espacios[2] == 'o')
+            {
+                //si el espacio ya esta ocupado imprime el mensaje
+                cout << "\n Espacio ya usado ";
+                num_aleatorio = 1 + rand() % (9);
+                cout << "\n La computadora eligio:  " << num_aleatorio << endl;
+                break;
+            }
+            else if (elige == 3 && espacios[3] == 'o')
+            {
+                //si el espacio ya esta ocupado imprime el mensaje
+                cout << "\n Espacio ya usado ";
+                num_aleatorio = 1 + rand() % (9);
+                cout << "\n La computadora eligio:  " << num_aleatorio << endl;
+                break;
+            }
+            else if (elige == 4 && espacios[4] == 'o')
+            {
+                //si el espacio ya esta ocupado imprime el mensaje
+                cout << "\n Espacio ya usado ";
+                num_aleatorio = 1 + rand() % (9);
+                cout << "\n La computadora eligio:  " << num_aleatorio << endl;
+                break;
+            }
+            else if (elige == 5 && espacios[5] == 'o')
+            {
+                //si el espacio ya esta ocupado imprime el mensaje
+                cout << "\n Espacio ya usado ";
+                num_aleatorio = 1 + rand() % (9);
+                cout << "\n La computadora eligio:  " << num_aleatorio << endl;
+                break;
+            }
+            else if (elige == 6 && espacios[6] == 'o')
+            {
+                //si el espacio ya esta ocupado imprime el mensaje
+                cout << "\n Espacio ya usado ";
+                num_aleatorio = 1 + rand() % (9);
+                cout << "\n La computadora eligio:  " << num_aleatorio << endl;
+                break;
+            }
+            else if (elige == 7 && espacios[7] == 'o')
+            {
+                //si el espacio ya esta ocupado imprime el mensaje
+                cout << "\n Espacio ya usado ";
+                num_aleatorio = 1 + rand() % (9);
+                cout << "\n La computadora eligio:  " << num_aleatorio << endl;
+                break;
+            }
+            else if (elige == 8 && espacios[8] == 'o')
+            {
+                //si el espacio ya esta ocupado imprime el mensaje
+                cout << "\n Espacio ya usado ";
+                num_aleatorio = 1 + rand() % (9);
+                cout << "\n La computadora eligio:  " << num_aleatorio << endl;
+                break;
+            }
+            else if (elige == 9 && espacios[9] == 'o')
+            {
+                //si el espacio ya esta ocupado imprime el mensaje
+                cout << "\n Espacio ya usado ";
+                num_aleatorio = 1 + rand() % (9);
+                cout << "\n La computadora eligio:  " << num_aleatorio << endl;
+                break;
+            }
+
+            }
+
+        }
+        cout << endl;
+
+        cout << "     |     |     " << endl;
+        cout << "  " << espacios[1] << "  |  " << espacios[2] << "  |  " << espacios[3] << endl;
+
+        cout << "_____|_____|____" << endl;
+        cout << "     |     |     " << endl;
+
+        cout << "  " << espacios[4] << "  |  " << espacios[5] << "  |  " << espacios[6] << endl;
+
+        cout << "_____|_____|____" << endl;
+        cout << "     |     |     " << endl;
+
+        cout << "  " << espacios[7] << "  |  " << espacios[8] << "  |  " << espacios[9] << endl;
+
+        cout << "     |     |     " << endl << endl;
+
+
+
+        //VERIFICAR QUIEN GANO
+        //ECHADOS
+        if (espacios[1] == espacios[2] && espacios[2] == espacios[3]) //X|X|X| line1 
+        {
+            if (espacios[1] == 'x')
+            {
+                cout << " GANASTE " << endl << endl;
+            }
+            else if (espacios[1] == 'o')
+            {
+                cout << " GANO LA MAQUINA " << endl << endl;
+            }
+            return 1;
+        }
+        else if (espacios[4] == espacios[5] && espacios[5] == espacios[6]) //X|X|X| line2
+        {
+            if (espacios[4] == 'x')
+            {
+                cout << " GANASTE " << endl << endl;
+            }
+            else if (espacios[4] == 'o')
+            {
+                cout << " GANO LA MAQUINA " << endl << endl;
+            }
+            return 1;
+        }
+        else if (espacios[7] == espacios[8] && espacios[8] == espacios[9]) //X|X|X| line3 
+        {
+            if (espacios[7] == 'x')
+            {
+                cout << " GANASTE " << endl << endl;
+            }
+            else if (espacios[7] == 'o')
+            {
+                cout << " GANO LA MAQUINA " << endl << endl;
+            }
+            return 1;
+        }
+        //PARADOS
+        else if (espacios[1] == espacios[4] && espacios[4] == espacios[7]) //X|X|X| C1
+        {
+            if (espacios[1] == 'x')
+            {
+                cout << " GANASTE " << endl << endl;
+            }
+            else if (espacios[1] == 'o')
+            {
+                cout << " GANO LA MAQUINA " << endl << endl;
+            }
+            return 1;
+        }
+        else if (espacios[2] == espacios[5] && espacios[5] == espacios[8]) //X|X|X| C2
+        {
+            if (espacios[2] == 'x')
+            {
+                cout << " GANASTE " << endl << endl;
+            }
+            else if (espacios[2] == 'o')
+            {
+                cout << " GANO LA MAQUINA " << endl << endl;
+            }
+            return 1;
+        }
+        else if (espacios[3] == espacios[6] && espacios[6] == espacios[9]) //X|X|X| C3
+        {
+            if (espacios[3] == 'x')
+            {
+                cout << " GANASTE " << endl << endl;
+            }
+            else if (espacios[3] == 'o')
+            {
+                cout << " GANO LA MAQUINA " << endl << endl;
+            }
+            return 1;
+        }
+
+        //DIAGONAL
+        else if (espacios[1] == espacios[5] && espacios[5] == espacios[9]) //X|X|X| DIAGONAL
+        {
+            if (espacios[1] == 'x')
+            {
+                cout << " GANASTE " << endl << endl;
+            }
+            else if (espacios[1] == 'o')
+            {
+                cout << " GANO LA MAQUINA " << endl << endl;
+            }
+            return 1;
+        }
+
+
+        //while principal
+    }
+    return 0;
+}
