@@ -42,7 +42,7 @@ int main() {
     char simbolo2 = 'o';
     int y;
     y = 0;
-
+    // JUGADOR
     while (i == 1) {
 
         cout << "Jugador 1 elige un número: ";
