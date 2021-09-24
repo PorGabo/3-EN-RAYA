@@ -411,6 +411,18 @@ int main() {
             }
             return 1;
         }
+        else if (espacios[3] == espacios[5] && espacios[5] == espacios[7]) //X|X|X| DIAGONAL
+        {
+            if (espacios[3] == 'x')
+            {
+                cout << " GANASTE " << endl << endl;
+            }
+            else if (espacios[3] == 'o')
+            {
+                cout << " GANO LA MAQUINA " << endl << endl;
+            }
+            return 1;
+        }
 
 
         //while principal
